@@ -10,29 +10,54 @@
 <div class="main"><div class="content">
 
 	<div class="box1 l">
-		Facts:   ??位阀门专家, ??家阀门产品样本<br/>
-                              ..........<br/>
-                             <a href="#">加入我们 注册</a><br/>
+		阀门专家:<br/>
+		在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势， 
+		实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力， 
+		成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。
+		在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势， 
+		实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力， 
+		成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。
 	</div>
 	
 	<div class="box1 l">
-                    账号:<input type="text" width=50/><br/>
-                    密码:<input type="password" width=50/><a href="#">忘记密码</a><br/>
-        <input type="checkbox"/>记住我    <button>登陆</button>  <a href="#">注册</a>
+        <!--{if $discuz_uid}-->
+	        <cite>Welcome:&nbsp;&nbsp;<a href="space.php?uid=$discuz_uid" class="noborder">$discuz_userss</a><!--{if $allowinvisible}--><span id="loginstatus"><!--{if !empty($invisible)}--><a href="member.php?action=switchstatus" onclick="ajaxget(this.href, 'loginstatus');doane(event);">{lang login_invisible_mode}</a><!--{else}--><a href="member.php?action=switchstatus" title="{lang login_switch_invisible_mode}" onclick="ajaxget(this.href, 'loginstatus');doane(event);">{lang login_normal_mode}</a><!--{/if}--></span><!--{/if}--></cite><br/>
+	        <a href="memcp.php">{lang user_center}</a><br/>
+	        <a id="myprompt" href="notice.php" <!--{if $prompt}-->class="new" onmouseover="showMenu({'ctrlid':this.id})"<!--{/if}-->>{lang notice}</a>
+			<span id="myprompt_check"></span>
+			<a href="pm.php" id="pm_ntc" target="_blank">{lang pm_center}</a>
+			<!--{if $taskon}-->
+				<a id="task_ntc" {if $doingtask}href="task.php?item=doing" class="new" title="{lang task_unfinish}"{else}href="task.php"{/if} target="_blank">{lang task}</a>
+			<!--{/if}-->
+        <!--{else}-->
+	                    账号:<input type="text" width=50/><br/>
+	                    密码:<input type="password" width=50/><a href="#">忘记密码</a><br/><br/>
+	        <a href="logging.php?action=login" onclick="showWindow('login', this.href);return false;">{lang login}</a>
+	        &nbsp;&nbsp;&nbsp;&nbsp;<a href="$regname" onclick="showWindow('register', this.href);return false;" class="noborder">$reglinkname</a>
+        <!--{/if}-->
 	</div>
 	
 	<div class="box1 l">
 	          网站理念：<br/>
-	    ............ ......................<br/>
-	    ............ ......................<br/>
-	    ............ ......................<br/>
+	    <p>在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势，
+	    实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力，
+	    成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。</p>
+	    <p>在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势，
+	    实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力，
+	    成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。</p>
 	</div>
 	
 	<div class="box1 l">
 	          今日新闻：<br/>
-	    ............ ......................<br/>
-	    ............ ......................<br/>
-	    ............ ......................<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>
+	          热门产品采购排行TOP10<br/>      
 	</div>
 
 </div></div>

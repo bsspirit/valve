@@ -27,7 +27,7 @@ $extrahead
 
 	<div id="header">
 		<div class="wrap s_clear">
-			<h2><a href="$indexname" title="$bbname">{BOARDLOGO}</a></h2>
+			<h2><a href="homepage.php" title="$bbname">{BOARDLOGO}</a></h2>
 			<div id="umenu">
 			<!--{if $discuz_uid}-->
 				<cite><a href="space.php?uid=$discuz_uid" class="noborder">$discuz_userss</a><!--{if $allowinvisible}--><span id="loginstatus"><!--{if !empty($invisible)}--><a href="member.php?action=switchstatus" onclick="ajaxget(this.href, 'loginstatus');doane(event);">{lang login_invisible_mode}</a><!--{else}--><a href="member.php?action=switchstatus" title="{lang login_switch_invisible_mode}" onclick="ajaxget(this.href, 'loginstatus');doane(event);">{lang login_normal_mode}</a><!--{/if}--></span><!--{/if}--></cite>

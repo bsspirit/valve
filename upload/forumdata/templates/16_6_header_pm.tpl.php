@@ -1,10 +1,5 @@
-<? if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('showmessage');
-0
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/showmessage.htm', 'D:\workspace\php\discuz72\upload\./templates/default/header.htm', 1351058433, '6', './templates/greenwall')
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/showmessage.htm', 'D:\workspace\php\discuz72\upload\./templates/default/footer.htm', 1351058433, '6', './templates/greenwall')
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/showmessage.htm', 'D:\workspace\php\discuz72\upload\./templates/default/jsmenu.htm', 1351058433, '6', './templates/greenwall')
-;?>
-<? if(!$inajax) { ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<? if(!defined('IN_DISCUZ')) exit('Access Denied'); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?=$charset?>" />
@@ -20,7 +15,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=7" />
 <link rel="archives" title="<?=$bbname?>" href="<?=$boardurl?>archiver/" />
 <?=$rsshead?>
-<?=$extrahead?><link rel="stylesheet" type="text/css" href="forumdata/cache/style_<?=STYLEID?>_common.css?<?=VERHASH?>" />
+<?=$extrahead?><link rel="stylesheet" type="text/css" href="forumdata/cache/style_<?=STYLEID?>_common.css?<?=VERHASH?>" /><link rel="stylesheet" type="text/css" href="forumdata/cache/scriptstyle_<?=STYLEID?>_<?=CURSCRIPT?>.css?<?=VERHASH?>" />
 <? if($forum['ismoderator']) { ?>
 <link href="forumdata/cache/style_16_moderator.css?Ga3" rel="stylesheet" type="text/css" />
 <? } ?><link rel="stylesheet" type="text/css" href="forumdata/my/my.css" />
@@ -34,7 +29,7 @@
 
 <div id="header">
 <div class="wrap s_clear">
-<h2><a href="homepage.php" title="<?=$bbname?>"><?=BOARDLOGO?></a></h2>
+<h2><a href="<?=$indexname?>" title="<?=$bbname?>"><?=BOARDLOGO?></a></h2>
 <div id="umenu">
 <? if($discuz_uid) { ?>
 <cite><a href="space.php?uid=<?=$discuz_uid?>" class="noborder"><?=$discuz_userss?></a><? if($allowinvisible) { ?><span id="loginstatus"><? if(!empty($invisible)) { ?><a href="member.php?action=switchstatus" onclick="ajaxget(this.href, 'loginstatus');doane(event);">隐身</a><? } else { ?><a href="member.php?action=switchstatus" title="我要隐身" onclick="ajaxget(this.href, 'loginstatus');doane(event);">在线</a><? } ?></span><? } ?></cite>
@@ -109,78 +104,4 @@ location.href = '<?=$BASESCRIPT?>?' + str;
 </div>
 </div>
 </div>
-<?=$pluginhooks['global_header']?><? } else { include template('header_ajax', '0', ''); } $allowreturn = $url_forward || !stristr($show_message, '返回') ? 0 : 1;$alerttype = $url_forward ? (preg_match('/\_succeed$/', $message) ? 'alert_right' : 'alert_info') : ($allowreturn ? 'alert_error' : 'alert_info'); if(!$inajax) { ?>
-<div id="nav"><a href="<?=$indexname?>"><?=$bbname?></a> &raquo; 提示信息</div>
-
-<div id="wrap" class="wrap s_clear"><div class="main"><div class="content nofloat">
-<div class="fcontent alert_win">
-<h3 class="float_ctrl"><em><?=$bbname?> 提示信息</em></h3>
-<hr class="shadowline" />
-<div class="postbox"><div class="<?=$alerttype?>">
-<p><?=$show_message?></p>
-<? if($url_forward) { if(empty($forwardtype)) { ?>
-<p class="alert_btnleft"><a href="<?=$url_forward?>">如果您的浏览器没有自动跳转，请点击此链接</a></p>
-<? } else { ?>
-<p class="alert_btnleft"><a href="<?=$url_forward?>">如果 <?=$refreshtime?> 秒后下载仍未开始，请点击此链接</a></p>
-<? } } elseif($allowreturn) { ?>
-<p class="alert_btnleft"><a href="javascript:history.back()">[ 点击这里返回上一页 ]</a></p>
-<? } ?>
-</div></div>
-</div>
-</div></div></div>
-<? } elseif(!empty($infloat) && (empty($_POST) || !empty($nopost))) { ?>
-<div class="fcontent alert_win">
-<h3 class="float_ctrl"><em>提示信息</em><span><a href="javascript:;" class="float_close" onclick="hideWindow('<?=$handlekey?>');" title="关闭">关闭</a></span></h3>
-<hr class="shadowline" />
-<div class="postbox">
-<div class="<?=$alerttype?>"><?=$show_message?></div>
-<? if($messagehandle == 'NOPERM' && !$discuz_uid) { ?>
-<div class="alert_btn"><input type="button" onclick="hideWindow('<?=$handlekey?>');showWindow('login', 'logging.php?action=login');" value="&nbsp;确定&nbsp;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="hideWindow('<?=$handlekey?>');" value="&nbsp;取消&nbsp;" /></div>
-<? } else { ?>
-<div class="alert_btn"><input type="button" onclick="hideWindow('<?=$handlekey?>');" value="关闭" /></div>
-<? } ?>
-</div>
-</div>
-<? } else { echo str_replace(array("，请返回", "，请。"), array("，请", "。"), $show_message); if($extra == 'HALTED' || $extra == 'NOPERM') { ?>
-<script type="text/javascript" reload="1">
-function ajaxerror() {
-hideMenu();
-showDialog('<?=$show_message?>', 'notice', '', null, 0);
-}
-ajaxerror();
-</script>
-<? } } if(!$inajax) { ?>
-</div><? if(!empty($plugins['jsmenu'])) { ?>
-<ul class="popupmenu_popup headermenu_popup" id="plugin_menu" style="display: none"><? if(is_array($plugins['jsmenu'])) { foreach($plugins['jsmenu'] as $module) { ?>     <? if(!$module['adminid'] || ($module['adminid'] && $adminid > 0 && $module['adminid'] >= $adminid)) { ?>
-     <li><?=$module['url']?></li>
-     <? } } } ?></ul>
-<? } if(is_array($subnavs)) { foreach($subnavs as $subnav) { ?><?=$subnav?><? } } if($prompts['newbietask'] && $newbietasks) { include template('task_newbie_js', '0', ''); } if($admode && !empty($advlist)) { ?>
-<div class="ad_footerbanner" id="ad_footerbanner1"><?=$advlist['footerbanner1']?></div><? if($advlist['footerbanner2']) { ?><div class="ad_footerbanner" id="ad_footerbanner2"><?=$advlist['footerbanner2']?></div><? } if($advlist['footerbanner3']) { ?><div class="ad_footerbanner" id="ad_footerbanner3"><?=$advlist['footerbanner3']?></div><? } } else { ?>
-<div id="ad_footerbanner1"></div><div id="ad_footerbanner2"></div><div id="ad_footerbanner3"></div>
-<? } ?>
-
-<?=$pluginhooks['global_footer']?>
-<div id="footer">
-<div class="wrap s_clear">
-<div id="footlink">
-<p>
-<strong><a href="<?=$siteurl?>" target="_blank"><?=$sitename?></a></strong>
-<? if($icp) { ?>( <a href="http://www.miibeian.gov.cn/" target="_blank"><?=$icp?></a>)<? } ?>
-<span class="pipe">|</span><a href="mailto:<?=$adminemail?>">联系我们</a>
-<? if($allowviewstats) { ?><span class="pipe">|</span><a href="stats.php">论坛统计</a><? } if($archiverstatus) { ?><span class="pipe">|</span><a href="archiver/" target="_blank">Archiver</a><? } if($wapstatus) { ?><span class="pipe">|</span><a href="wap/" target="_blank">WAP</a><? } if($statcode) { ?><span class="pipe">| <?=$statcode?></span><? } ?>
-<?=$pluginhooks['global_footerlink']?>
-</p>
-<p class="smalltext">
-GMT<?=$timenow['offset']?>, <?=$timenow['time']?>
-<? if(debuginfo()) { ?>, <span id="debuginfo">Processed in <?=$debuginfo['time']?> second(s), <?=$debuginfo['queries']?> queries<? if($gzipcompress) { ?>, Gzip enabled<? } ?></span><? } ?>.
-</p>
-</div>
-<div id="rightinfo">
-<p>Powered by <strong><a href="http://www.discuz.net" target="_blank">Discuz!</a></strong> <em><?=$version?></em><? if(!empty($boardlicensed)) { ?> <a href="http://license.comsenz.com/?pid=1&amp;host=<?=$_SERVER['HTTP_HOST']?>" target="_blank">Licensed</a><? } ?></p>
-<p class="smalltext">&copy; 2001-2009 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a></p>
-</div><? updatesession(); ?></div>
-</div>
-<? if($_DCACHE['settings']['frameon'] && in_array(CURSCRIPT, array('index', 'forumdisplay', 'viewthread')) && $_DCOOKIE['frameon'] == 'yes') { ?>
-<script src="<?=$jspath?>iframe.js?<?=VERHASH?>" type="text/javascript"></script>
-<? } output(); ?></body>
-</html><? } else { include template('footer_ajax', '0', ''); } ?>
+<?=$pluginhooks['global_header']?>

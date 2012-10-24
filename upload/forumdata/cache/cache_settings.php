@@ -1,7 +1,7 @@
 <?php
 //Discuz! cache file, DO NOT modify me!
-//Created: Oct 24, 2012, 10:13
-//Identify: 5a69a9b317ecbf7cad761c2b5df2f25f
+//Created: Oct 24, 2012, 5:54
+//Identify: e4959cb0ee7c357295b3c6ecd85fde61
 
 $_DCACHE['settings'] = array (
   'accessemail' => '',
@@ -27,7 +27,7 @@ $_DCACHE['settings'] = array (
   'baidusitemap_life' => '12',
   'bannedmessages' => '',
   'bbclosed' => '0',
-  'bbname' => '阀门中国',
+  'bbname' => '阀门中国论坛',
   'bdaystatus' => '0',
   'boardlicensed' => '0',
   'cacheindexlife' => '0',

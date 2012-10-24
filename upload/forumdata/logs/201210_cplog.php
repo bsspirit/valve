@@ -129,3 +129,12 @@
 <?PHP exit;?>	1350958287	admin	1	127.0.0.1	home	
 <?PHP exit;?>	1350958287	admin	1	127.0.0.1	misc	GET={operation=checkstat; };
 <?PHP exit;?>	1350958288	admin	1	127.0.0.1	misc	GET={operation=custombar; inajax=1; ajaxtarget=custombar; };
+<?PHP exit;?>	1351058046	admin	1	127.0.0.1	home	
+<?PHP exit;?>	1351058050	admin	1	127.0.0.1	misc	GET={operation=custombar; inajax=1; ajaxtarget=custombar; };
+<?PHP exit;?>	1351058050	admin	1	127.0.0.1	settings	GET={operation=basic; };
+<?PHP exit;?>	1351058050	admin	1	127.0.0.1	home	
+<?PHP exit;?>	1351058050	admin	1	127.0.0.1	misc	GET={operation=custombar; inajax=1; ajaxtarget=custombar; };
+<?PHP exit;?>	1351058050	admin	1	127.0.0.1	misc	GET={operation=checkstat; };
+<?PHP exit;?>	1351058055	admin	1	127.0.0.1	settings	GET={operation=basic; };
+<?PHP exit;?>	1351058066	admin	1	127.0.0.1	settings	GET={edit=yes; }; POST={scrolltop=; anchor=; operation=basic; settingsnew={bbname=阀门中国论坛; sitename=Valve China; siteurl=http://loc.v.com/; indexname=index.php; icp=; boardlicensed=0; bbclosed=0; closedreason=; statcode=; }; settingsubmit=提交; };
+<?PHP exit;?>	1351058069	admin	1	127.0.0.1	settings	GET={operation=basic; };

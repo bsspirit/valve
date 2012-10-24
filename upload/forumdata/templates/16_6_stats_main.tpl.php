@@ -1,8 +1,9 @@
-<? if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('homepage');
+<? if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('stats_main');
 0
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/homepage.htm', 'D:\workspace\php\discuz72\upload\./templates/default/header.htm', 1351058000, '6', './templates/greenwall')
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/homepage.htm', 'D:\workspace\php\discuz72\upload\./templates/default/footer.htm', 1351058000, '6', './templates/greenwall')
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/homepage.htm', 'D:\workspace\php\discuz72\upload\./templates/default/jsmenu.htm', 1351058000, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/stats_main.htm', 'D:\workspace\php\discuz72\upload\./templates/default/header.htm', 1351057257, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/stats_main.htm', 'D:\workspace\php\discuz72\upload\./templates/default/stats_navbar.htm', 1351057257, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/stats_main.htm', 'D:\workspace\php\discuz72\upload\./templates/default/footer.htm', 1351057257, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/stats_main.htm', 'D:\workspace\php\discuz72\upload\./templates/default/jsmenu.htm', 1351057257, '6', './templates/greenwall')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -34,7 +35,7 @@
 
 <div id="header">
 <div class="wrap s_clear">
-<h2><a href="homepage.php" title="<?=$bbname?>"><?=BOARDLOGO?></a></h2>
+<h2><a href="<?=$indexname?>" title="<?=$bbname?>"><?=BOARDLOGO?></a></h2>
 <div id="umenu">
 <? if($discuz_uid) { ?>
 <cite><a href="space.php?uid=<?=$discuz_uid?>" class="noborder"><?=$discuz_userss?></a><? if($allowinvisible) { ?><span id="loginstatus"><? if(!empty($invisible)) { ?><a href="member.php?action=switchstatus" onclick="ajaxget(this.href, 'loginstatus');doane(event);">隐身</a><? } else { ?><a href="member.php?action=switchstatus" title="我要隐身" onclick="ajaxget(this.href, 'loginstatus');doane(event);">在线</a><? } ?></span><? } ?></cite>
@@ -109,68 +110,140 @@ location.href = '<?=$BASESCRIPT?>?' + str;
 </div>
 </div>
 </div>
-<?=$pluginhooks['global_header']?><div id="nav"><a href="<?=$indexname?>"><?=$bbname?></a> &raquo; 首页</div>
-<? if($admode && !empty($advlist['text'])) { ?><div class="ad_text" id="ad_text"><table summary="Text Ad" cellpadding="0" cellspacing="1"><?=$advlist['text']?></table></div><? } else { ?><div id="ad_text"></div><? } ?>
-<div id="wrap"<? if($infosidestatus['allow'] < 2) { ?> class="wrap s_clear"<? } else { ?> class="wrap with_side s_clear"<? } ?>>
-<? if($infosidestatus['allow'] == 2) { ?>
-<a id="sidebar_img" href="javascript:;" onclick="sidebar_collapse(['打开边栏', '关闭边栏']);" class="<?=$collapseimg['sidebar']?>"><? if($collapseimg['sidebar'] == 'collapsed_yes') { ?>打开边栏<? } else { ?>关闭边栏<? } ?></a>
-<? } elseif($infosidestatus['allow'] == 1) { ?>
-<a id="sidebar_img" href="javascript:;" onclick="sidebar_collapse(['', '关闭边栏']);" class="collapsed_yes">打开边栏</a>
+<?=$pluginhooks['global_header']?><div id="nav"><a href="<?=$indexname?>"><?=$bbname?></a> &raquo; <a href="stats.php">论坛统计</a> &raquo; 基本概况</div>
+<div id="wrap" class="wrap with_side s_clear">
+<div class="main">
+<div class="content">
+<h1>基本概况</h1>
+<div class="datalist">
+<div id="list_stats_member_c" class="c_header">
+<h3 onclick="toggle_collapse('list_stats_member', 1, 1);">会员统计</h3>
+<div class="c_header_action">
+<p class="c_header_ctrlbtn" onclick="toggle_collapse('list_stats_member', 1, 1);">[ 展开 ]</p>
+</div>
+</div>
+<table id="list_stats_member" summary="会员统计" cellspacing="0" cellpadding="0">
+<tr class="colplural">
+<th width="16%">注册会员</th><td width="34%"><?=$members?></td>
+<th width="16%">发帖会员</th><td width="34%"><?=$mempost?></td>
+</tr>
+<tr>
+<th>管理成员</th><td><?=$admins?></td>
+<th>未发帖会员</th><td><?=$memnonpost?></td>
+</tr>
+<tr class="colplural">
+<th>新会员</th><td><?=$lastmember?></td>
+<th>发帖会员占总数</th><td><?=$mempostpercent?>%</td>
+</tr>
+<tr>
+<th>今日论坛之星</th><td><?=$bestmem?> <em title="发帖数">(<?=$bestmemposts?>)</em></td>
+<th>平均每人发帖数</th><td><?=$mempostavg?></td>
+</tr>
+</table>
+</div>
+<div class="datalist">
+<div id="list_stats_c" class="c_header">
+<h3 onclick="toggle_collapse('list_stats', 1, 1);">论坛统计</h3>
+<div class="c_header_action">
+<p class="c_header_ctrlbtn" onclick="toggle_collapse('list_stats', 1, 1);">[ 展开 ]</p>
+</div>
+</div>
+<table id="list_stats" summary="论坛统计" cellspacing="0" cellpadding="0">
+<tr class="colplural">
+<th width="150">版块数</th><td width="60"><?=$forums?></td>
+<th width="150">平均每日新增帖子数</th><td width="60"><?=$postsaddavg?></td>
+<th width="150">最热门的版块</th><td><a href="forumdisplay.php?fid=<?=$hotforum['fid']?>" target="_blank"><?=$hotforum['name']?></a></td>
+</tr>
+<tr>
+<th>主题数</th><td><?=$threads?></td>
+<th>平均每日注册会员数</th><td><?=$membersaddavg?></td>
+<th>主题数</th><td><?=$hotforum['threads']?></td>
+</tr>
+<tr class="colplural">
+<th>帖子数</th><td><?=$posts?></td>
+<th>最近 24 小时新增帖子数</th><td><?=$postsaddtoday?></td>
+<th>帖子数</th><td><?=$hotforum['posts']?></td>
+</tr>
+<tr>
+<th>平均每个主题被回复次数</th><td><?=$threadreplyavg?></td>
+<th>最近 24 小时新增会员数</th><td><?=$membersaddtoday?></td>
+<th>论坛活跃指数</th><td><?=$activeindex?></td>
+</tr>
+</table>
+</div>
+<? if($statstatus) { ?>
+<div class="datalist">
+<div id="list_stats_pageview_c" class="c_header">
+<h3 onclick="toggle_collapse('list_stats_pageview', 1, 1);">流量概况</h3>
+<div class="c_header_action">
+<p class="c_header_ctrlbtn" onclick="toggle_collapse('list_stats_pageview', 1, 1);">[ 展开 ]</p>
+</div>
+</div>
+<table id="list_stats_pageview" summary="流量概况" cellspacing="0" cellpadding="0">
+<tr class="colplural">
+<th width="16%">总页面流量</th><td width="34%"><?=$stats_total['hits']?></td>
+<th width="16%">访问量最多的月份</th><td width="34%"><?=$maxmonth_year?> 年 <?=$maxmonth_month?> 月</td>
+</tr>
+<tr>
+<th>共计来访</th><td><?=$stats_total['visitors']?> 人次</td>
+<th>月份总页面流量</th><td><?=$maxmonth?></td>
+</tr>
+<tr class="colplural">
+<th>会员</th><td><?=$stats_total['members']?></td>
+<th>时段</th><td><?=$maxhourfrom?> - <?=$maxhourto?></td>
+</tr>
+<tr>
+<th>游客</th><td><?=$stats_total['guests']?></td>
+<th>时段总页面流量</th><td><?=$maxhour?></td>
+</tr>
+<tr class="colplural">
+<th>平均每人浏览</th><td colspan="3"><?=$pageviewavg?></td>
+</tr>
+</table>
+</div>
 <? } ?>
-<div class="main"><div class="content">
-
-<div class="box1 l">
-阀门专家:<br/>
-在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势， 
-实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力， 
-成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。
-在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势， 
-实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力， 
-成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。
+<div class="datalist">
+<div id="list_stats_month_c" class="c_header">
+<h3 onclick="toggle_collapse('list_stats_month', 1, 1);">月份流量</h3>
+<div class="c_header_action">
+<p class="c_header_ctrlbtn" onclick="toggle_collapse('list_stats_month', 1, 1);">[ 展开 ]</p>
 </div>
-
-<div class="box1 l">
-        <? if($discuz_uid) { ?>
-        <cite>Welcome:&nbsp;&nbsp;<a href="space.php?uid=<?=$discuz_uid?>" class="noborder"><?=$discuz_userss?></a><? if($allowinvisible) { ?><span id="loginstatus"><? if(!empty($invisible)) { ?><a href="member.php?action=switchstatus" onclick="ajaxget(this.href, 'loginstatus');doane(event);">隐身</a><? } else { ?><a href="member.php?action=switchstatus" title="我要隐身" onclick="ajaxget(this.href, 'loginstatus');doane(event);">在线</a><? } ?></span><? } ?></cite><br/>
-        <a href="memcp.php">个人中心</a><br/>
-        <a id="myprompt" href="notice.php" <? if($prompt) { ?>class="new" onmouseover="showMenu({'ctrlid':this.id})"<? } ?>>提醒</a>
-<span id="myprompt_check"></span>
-<a href="pm.php" id="pm_ntc" target="_blank">短消息</a>
-<? if($taskon) { ?>
-<a id="task_ntc" <? if($doingtask) { ?>href="task.php?item=doing" class="new" title="您有未完成的任务"<? } else { ?>href="task.php"<? } ?> target="_blank">论坛任务</a>
+</div>
+<table id="list_stats_month" summary="月份流量" cellpadding="0" cellspacing="0">
+<? if($statstatus) { ?>
+<?=$statsbar_month?>
+<? } else { ?>
+<thead class="colplural">
+<td colspan="2">每月新增帖子记录</td>
+</thead>
+<?=$statsbar_monthposts?>
+<thead class="colplural">
+<td colspan="2">每日新增帖子记录</td>
+</thead>
+<?=$statsbar_dayposts?>
 <? } ?>
-        <? } else { ?>
-                    账号:<input type="text" width=50/><br/>
-                    密码:<input type="password" width=50/><a href="#">忘记密码</a><br/><br/>
-        <a href="logging.php?action=login" onclick="showWindow('login', this.href);return false;">登录</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;<a href="<?=$regname?>" onclick="showWindow('register', this.href);return false;" class="noborder"><?=$reglinkname?></a>
-        <? } ?>
+</table>
 </div>
-
-<div class="box1 l">
-          网站理念：<br/>
-    <p>在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势，
-    实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力，
-    成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。</p>
-    <p>在全球经济形势动荡仍占市场主导的发展背景下，我国阀门行业依托灵活的产业发展优势，
-    实现着产业经济的可持续增长，并以强劲的发展势头显现出震撼世界的活力，
-    成为我国经济社会发展的支柱产业，就此迎来了产业发展的高峰期。</p>
+<div class="notice">统计数据已被缓存，上次于 <?=$lastupdate?> 被更新，下次将于 <?=$nextupdate?> 进行更新</div>
 </div>
-
-<div class="box1 l">
-          今日新闻：<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>
-          热门产品采购排行TOP10<br/>      
 </div>
-
+<div class="side"><h2>统计选项</h2>
+<div class="sideinner">
+<ul class="tabs">
+<li><a href="stats.php">基本概况</a></li>
+<? if($statstatus) { ?><li><a href="stats.php?type=views">流量统计</a></li><? } if($statstatus) { ?><li><a href="stats.php?type=agent">客户软件</a></li><? } if($statstatus) { ?><li><a href="stats.php?type=posts">发帖量记录</a></li><? } ?>
+<li><a href="stats.php?type=forumsrank">版块排行</a></li>
+<li><a href="stats.php?type=threadsrank">主题排行</a></li>
+<li><a href="stats.php?type=postsrank">发帖排行</a></li>
+<li><a href="stats.php?type=creditsrank">积分排行</a></li>
+<li><a href="stats.php?type=trade">交易排行</a></li>
+<? if($oltimespan) { ?><li><a href="stats.php?type=onlinetime">在线时间</a></li><? } ?>
+<li><a href="stats.php?type=team">管理团队</a></li>
+<? if($modworkstatus) { ?><li><a href="stats.php?type=modworks">管理统计</a></li><? } ?>
+<li><a href="member.php?action=list">会员列表</a></li>
+</ul>
 </div></div>
+</div>
 </div><? if(!empty($plugins['jsmenu'])) { ?>
 <ul class="popupmenu_popup headermenu_popup" id="plugin_menu" style="display: none"><? if(is_array($plugins['jsmenu'])) { foreach($plugins['jsmenu'] as $module) { ?>     <? if(!$module['adminid'] || ($module['adminid'] && $adminid > 0 && $module['adminid'] >= $adminid)) { ?>
      <li><?=$module['url']?></li>
