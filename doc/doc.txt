@@ -1,0 +1,8 @@
+维基百科
+http://dev.discuz.org/wiki/
+
+WebPage
+upload\templates\default\header.htm
+upload\templates\default\index_header.htm
+upload\templates\default\index_navbar.htm
+upload\templates\default\footer.htm

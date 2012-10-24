@@ -1,0 +1,2 @@
+grant all on valve.* to valve@'%' identified by 'valve';
+grant all on valve.* to valve@localhost identified by 'valve';

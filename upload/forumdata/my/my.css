@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+.c{both:clear;}
+.l{float:left;}
+.r{float:right;}
+
+.box1{
+	margin:5px;
+	padding:5px;
+	width:46%;
+	height:100px;
+	border:1px solid #DDEEF6;
+	background-color: #DDEEF6;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
