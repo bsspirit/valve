@@ -1,1 +1,0 @@
-<?php exit;?>a:3:{s:5:"step1";a:3:{s:4:"size";s:1:"0";s:4:"safe";s:1:"0";s:4:"func";s:1:"0";}s:5:"step2";a:3:{s:6:"bbname";s:12:"阀门中国";s:8:"sitename";s:11:"Valve China";s:7:"siteurl";s:17:"http://loc.v.com/";}s:5:"step3";a:2:{s:5:"cates";a:0:{}s:6:"forums";a:0:{}}}
