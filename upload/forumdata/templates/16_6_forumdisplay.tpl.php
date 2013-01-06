@@ -1,9 +1,9 @@
 <? if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('forumdisplay');
 0
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/header.htm', 1351046337, '6', './templates/greenwall')
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/recommend.htm', 1351046337, '6', './templates/greenwall')
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/footer.htm', 1351046337, '6', './templates/greenwall')
-|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/jsmenu.htm', 1351046337, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/header.htm', 1357439509, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/recommend.htm', 1357439509, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/footer.htm', 1357439509, '6', './templates/greenwall')
+|| checktplrefresh('D:\workspace\php\discuz72\upload\./templates/default/forumdisplay.htm', 'D:\workspace\php\discuz72\upload\./templates/default/jsmenu.htm', 1357439509, '6', './templates/greenwall')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,7 +24,8 @@
 <?=$extrahead?><link rel="stylesheet" type="text/css" href="forumdata/cache/style_<?=STYLEID?>_common.css?<?=VERHASH?>" /><link rel="stylesheet" type="text/css" href="forumdata/cache/scriptstyle_<?=STYLEID?>_<?=CURSCRIPT?>.css?<?=VERHASH?>" />
 <? if($forum['ismoderator']) { ?>
 <link href="forumdata/cache/style_16_moderator.css?Ga3" rel="stylesheet" type="text/css" />
-<? } ?><script type="text/javascript">var STYLEID = '<?=STYLEID?>', IMGDIR = '<?=IMGDIR?>', VERHASH = '<?=VERHASH?>', charset = '<?=$charset?>', discuz_uid = <?=$discuz_uid?>, cookiedomain = '<?=$cookiedomain?>', cookiepath = '<?=$cookiepath?>', attackevasive = '<?=$attackevasive?>', disallowfloat = '<?=$disallowfloat?>', creditnotice = '<? if($creditnotice) { ?><?=$creditnames?><? } ?>', <? if(in_array(CURSCRIPT, array('viewthread', 'forumdisplay'))) { ?>gid = parseInt('<?=$thisgid?>')<? } elseif(CURSCRIPT == 'index') { ?>gid = parseInt('<?=$gid?>')<? } else { ?>gid = 0<? } ?>, fid = parseInt('<?=$fid?>'), tid = parseInt('<?=$tid?>')</script>
+<? } ?><link rel="stylesheet" type="text/css" href="forumdata/my/my.css" />
+<script type="text/javascript">var STYLEID = '<?=STYLEID?>', IMGDIR = '<?=IMGDIR?>', VERHASH = '<?=VERHASH?>', charset = '<?=$charset?>', discuz_uid = <?=$discuz_uid?>, cookiedomain = '<?=$cookiedomain?>', cookiepath = '<?=$cookiepath?>', attackevasive = '<?=$attackevasive?>', disallowfloat = '<?=$disallowfloat?>', creditnotice = '<? if($creditnotice) { ?><?=$creditnames?><? } ?>', <? if(in_array(CURSCRIPT, array('viewthread', 'forumdisplay'))) { ?>gid = parseInt('<?=$thisgid?>')<? } elseif(CURSCRIPT == 'index') { ?>gid = parseInt('<?=$gid?>')<? } else { ?>gid = 0<? } ?>, fid = parseInt('<?=$fid?>'), tid = parseInt('<?=$tid?>')</script>
 <script src="<?=$jspath?>common.js?<?=VERHASH?>" type="text/javascript"></script>
 </head>
 
@@ -34,7 +35,7 @@
 
 <div id="header">
 <div class="wrap s_clear">
-<h2><a href="<?=$indexname?>" title="<?=$bbname?>"><?=BOARDLOGO?></a></h2>
+<h2><a href="homepage.php" title="<?=$bbname?>"><?=BOARDLOGO?></a></h2>
 <div id="umenu">
 <? if($discuz_uid) { ?>
 <cite><a href="space.php?uid=<?=$discuz_uid?>" class="noborder"><?=$discuz_userss?></a><? if($allowinvisible) { ?><span id="loginstatus"><? if(!empty($invisible)) { ?><a href="member.php?action=switchstatus" onclick="ajaxget(this.href, 'loginstatus');doane(event);">隐身</a><? } else { ?><a href="member.php?action=switchstatus" title="我要隐身" onclick="ajaxget(this.href, 'loginstatus');doane(event);">在线</a><? } ?></span><? } ?></cite>
