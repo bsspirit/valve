@@ -3,10 +3,10 @@ $_CACHE['apps'] = array (
   1 => 
   array (
     'appid' => '1',
-    'type' => 'DISCUZ',
+    'type' => 'DISCUZX',
     'name' => 'Discuz! Board',
-    'url' => 'http://loc.v.com/install/index.php',
-    'ip' => '127.0.0.1',
+    'url' => 'http://loc.valve.com/install/index.php',
+    'ip' => '',
     'viewprourl' => '',
     'apifilename' => 'uc.php',
     'charset' => '',
@@ -15,6 +15,7 @@ $_CACHE['apps'] = array (
     'recvnote' => '1',
     'extra' => false,
     'tagtemplates' => '',
+    'allowips' => '',
   ),
 );
 

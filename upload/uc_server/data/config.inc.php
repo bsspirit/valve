@@ -1,18 +1,18 @@
 <?php 
 define('UC_DBHOST', 'localhost');
-define('UC_DBUSER', 'valve');
-define('UC_DBPW', 'valve');
-define('UC_DBNAME', 'valve');
+define('UC_DBUSER', 'root');
+define('UC_DBPW', 'mysql');
+define('UC_DBNAME', 'ultrax');
 define('UC_DBCHARSET', 'utf8');
-define('UC_DBTABLEPRE', 'cdb_uc_');
+define('UC_DBTABLEPRE', 'pre_ucenter_');
 define('UC_COOKIEPATH', '/');
 define('UC_COOKIEDOMAIN', '');
 define('UC_DBCONNECT', 0);
 define('UC_CHARSET', 'utf-8');
-define('UC_FOUNDERPW', '73828e2cce4a6ce21870ee993edf5dac');
-define('UC_FOUNDERSALT', 'CdX0o1');
-define('UC_KEY', 'bd40z1Mfe2gam124c8Z5Z4b9FdC4Y875c7xbM8FfId9cQdH6VddcQ0Dcf2A315C3');
-define('UC_SITEID', '8dI0j1Yf228ac1v4k8a5H4t9cdQ4w8g5b7QbK84ffdkchdJ6Qd5cd0Ic8223E5w3');
-define('UC_MYKEY', 'tdO0q15fd2WaQ1P4U8g5x4X9Jdr4Y8g5d7wbj8afFdLcJdt6Bd1c20Lcm2C3o5T3');
+define('UC_FOUNDERPW', '0a961abb3d314acad5e5da9d06b69fab');
+define('UC_FOUNDERSALT', '3eP2M0');
+define('UC_KEY', 'Qen2f0FcacK7SfU0k9abB7nfi0jdr6OdDfp195Hc52kbv5548920dej7D3BdE9D0');
+define('UC_SITEID', 'rea2J0WcBcQ73fk0H9nbU73fd0ydb6ndtfi1S5dcT2sb65N4B950Pec7G3qdY9q0');
+define('UC_MYKEY', 'zej250IcbcL7hfh0l9yb47kfe0gdl64dlfr1i5CcQ27b05S4X9H04eJ7S3KdT9h0');
 define('UC_DEBUG', false);
 define('UC_PPP', 20);

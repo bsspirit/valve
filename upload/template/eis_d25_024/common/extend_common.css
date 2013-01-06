@@ -1,0 +1,72 @@
+﻿body{ background:#eee;}
+.wp80{ width:982px; margin:0px auto;}
+.eis_bg{ background:url({IMGDIR}/eis/eis_bg.png) repeat-x 0 0;} 
+#eis_toptb{ height:36px; line-height:36px; overflow:hidden; color:#FFF;}
+#eis_toptb a{ color:#DFF3AF;}
+
+#hd{ padding-top:5px;}
+#hd .hdc{ padding:10px 0px 0px 0;}
+#hd h2{ background:url({IMGDIR}/eis/eis_h2_bg.png) no-repeat 100% center;}
+
+#um a,#um { color:#FFF;}
+#um .pipe{ font-size:10px; color:#648712;}
+#um .new { padding-left:15px; background-repeat: no-repeat; background-position: 0 50%; color:#FFF!important; font-weight: 700; }
+#extcreditmenu.a { color:#648712;}
+
+#eis_nv { overflow: hidden; height:55px; background:url({IMGDIR}/eis/eis_nv.png) repeat-x 0 0;}
+#eis_nv li { float: left; padding-right:1px; height:55px; line-height:52px; font-weight:100; font-size: 16px; background:url({IMGDIR}/eis/eis_nv_li.png) no-repeat 100% 0;}
+.ie_all #eis_nv li { line-height:55px; }
+.ie6 #eis_nv li { line-height: 52px; }
+#eis_nv li a { float: left; padding: 0 20px; height: 55px;}
+#eis_nv li a { color:#FFF; }
+#eis_nv li span { display: none; }
+#eis_nv li.a { margin-left:-2px; background:url({IMGDIR}/eis/eis_nv_a.png) repeat-x 0 0;}
+#eis_nv li.a a { color:#FFF; }
+#eis_nv li a:hover { color:#FFF; text-decoration:none; background:url({IMGDIR}/eis/eis_nv_a.png) repeat-x 0 0;}
+#eis_nv li.hover a:hover, #eis_nv li.hover a { color:#FFF; text-decoration:none; background:url({IMGDIR}/eis/eis_nv_a.png) repeat-x 0 0;}
+
+#qmenu{ color:#648712; margin-top:14px; margin-right:8px; text-shadow:none!important; }
+#scbar{ background:#FFF; border:1px solid #E1E1E1; border-bottom:2px solid #E1E1E1;border-right:2px solid #E1E1E1}
+#scbar .xi2 { color:#666!important;}
+
+.fastlg,.fastlg a{ color:#FFF!important;}
+.fastlg_l{ border:none;}
+.fastlg .eis_pn{ text-align:center; border:0px; height:22px; line-height:22px; background:url({IMGDIR}/eis/eis_fastlg_pn.png) no-repeat 0 0; color:#FFF;}
+#ls_username ,#ls_password{ width:141px; height:23px; line-height:23px; overflow:hidden; color:#FFF; border:0px; background:url({IMGDIR}/eis/eis_ls.gif) no-repeat 0 0;}
+#ls_username a ,#ls_password a{ color:#FFF;}
+
+.eis_wp{ margin-top:10px; background:#FFF; border:1px solid #E1E1E1; border-bottom:3px solid #E1E1E1; border-right:2px solid #E1E1E1; padding:5px 0;}
+
+.fl{ border:none;}
+.fl .bm{ margin-top:10px;}
+.fl .bm .bm_h{ height:40px; line-height:40px; overflow:hidden; border:1px solid #E1E1E1; background:url({IMGDIR}/eis/eis_bm_h.png) repeat-x 0 0;}
+.fl .bm .bm_h h2{ font-size:14px; font-weight:100; }
+.fl .bm .bm_h h2 a{ color:#666;}
+.fl .bm .bm_h .o img{ margin-top:15px;}
+.fl .bm .bm_c{ border:1px solid #E1E1E1; border-bottom:2px solid #E1E1E1}
+
+#f_pst{ border:1px solid #E1E1E1!important; border-bottom:3px solid #E1E1E1!important; border-right:2px solid #E1E1E1!important;}
+
+#ct .bmw{ border:none;}
+#ct .bmw .bm_h{ height:40px; line-height:40px; overflow:hidden; border:1px solid #E1E1E1; background:url({IMGDIR}/eis/eis_bm_h.png) repeat-x 0 0;}
+#ct .bmw .bm_h h2{ font-size:14px; font-weight:100; }
+#ct .bmw .bm_h h2 a{ color:#666;}
+#ct .bmw .bm_h .o img{ margin-top:15px;}
+#ct .bmw .th { height:40px; overflow:hidden; border:1px solid #E1E1E1; background:url({IMGDIR}/eis/eis_bm_h.png) repeat-x 0 0;}
+#ct .bmw .th{ font-size:13px; font-weight:100; }
+#ct .bmw .th a{ color:#666;}
+#ct .bmw .th td,#ct .bmw .th th{ background:none; padding-top:8px;}
+#ct .bmw .bm_c{ border:1px solid #E1E1E1; border-bottom:2px solid #E1E1E1}
+
+
+.eis_ft{ margin-top:10px; background:#e1e1e1; border-top:2px solid #D9D9D9;}
+#ft,#ft a{ color:#333; border:none; padding-top:20px; padding-bottom:20px;}
+
+.ttp li.a a,.ttp li.a a:hover,.ttp li a:hover{ background:#FB9A15; border:1px solid #F37705; color:#FFF;}
+
+.pnc,.pnc a, .tb_h .o, .tb .o{ border:0px!important;}
+
+.bdl { float: left; overflow: hidden; border: 1px solid #DCDCDC!important; background-color: #F9F9F9!important; }
+.bdl dt { overflow: hidden; height: 27px; line-height: 27px; border: solid #e4e4e4!important; border-width: 1px 0 2px 0px!important; background: url({IMGDIR}/titlebg_sd.png) repeat-x 100% 0; }
+/* 当前版块 */
+.bdl dd.bdl_a a { background-color: #F8F8F8!important;  }

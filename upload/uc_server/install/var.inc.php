@@ -1,7 +1,7 @@
 <?php
 
 /*
-	[Discuz!] (C)2001-2009 Comsenz Inc.
+	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: forum.func.php 14122 2008-08-20 06:06:33Z cnteacher $
@@ -12,9 +12,16 @@ if(!defined('IN_COMSENZ')) {
 }
 
 define('SOFT_NAME', 'UCenter');
-define('SOFT_VERSION', '1.5.0');
-define('SOFT_RELEASE', '20090121');
-define('INSTALL_LANG', 'SC_UTF8');
+
+if(defined('UC_SERVER_VERSION')) {
+	define('SOFT_VERSION', UC_SERVER_VERSION);
+	define('SOFT_RELEASE', UC_SERVER_RELEASE);
+} else {
+	define('SOFT_VERSION', '0.0.0');
+	define('SOFT_RELEASE', '19700101');
+}
+
+define('INSTALL_LANG', 'SC_GBK');
 
 define('CONFIG', ROOT_PATH.'./data/config.inc.php');
 
@@ -22,8 +29,8 @@ $sqlfile = ROOT_PATH.'./install/uc.sql';
 
 $lockfile = ROOT_PATH.'./data/install.lock';
 
-define('CHARSET', 'utf-8');
-define('DBCHARSET', 'utf8');
+define('CHARSET', 'gbk');
+define('DBCHARSET', 'gbk');
 
 define('ORIG_TABLEPRE', 'uc_');
 
@@ -62,7 +69,7 @@ define('UNDEFINE_FUNC', 32);
 define('MISSING_PARAMETER', 33);
 define('LOCK_FILE_NOT_TOUCH', 34);
 
-$func_items = array('mysql_connect', 'fsockopen', 'gethostbyname', 'file_get_contents', 'xml_parser_create');
+$func_items = array('mysql_connect', 'gethostbyname', 'file_get_contents', 'xml_parser_create');
 
 $env_items = array
 (
