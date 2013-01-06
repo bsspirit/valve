@@ -1,5 +1,5 @@
 grant all on valve.* to valve@'%' identified by 'valve';
 grant all on valve.* to valve@localhost identified by 'valve';
 
-grant all on ultrax.* to valve@'%' identified by 'valvemysql';
-grant all on ultrax.* to valve@'localhost' identified by 'valvemysql';
+grant all on ultrax.* to valve@'%' identified by 'valve';
+grant all on ultrax.* to valve@'localhost' identified by 'valve';
